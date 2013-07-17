@@ -1,4 +1,4 @@
-iisseven
+IIS 7 custom configuration
 ========
 
 IIS 7 related config, schemas, scripts, etc
