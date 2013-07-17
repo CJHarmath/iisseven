@@ -1,0 +1,10 @@
+<configSchema>
+<sectionSchema name="system.webServer/security/IdentityAssertion">
+    <attribute name="enabled" type="bool" defaultValue="false"/>
+    <element name="WhiteListedProids">
+        <collection addElement="add" clearElement="clear" removeElement="remove" mergeAppend="false">
+            <attribute name="value" type="string" isUniqueKey="true"/>
+        </collection>
+    </element>
+</sectionSchema>
+</configSchema>
