@@ -52,8 +52,8 @@ try {
         -filter "system.webServer/tracing/traceFailedRequests/add[@path='$Path']/traceAreas" -name "." `
         -value @{provider = 'WWW Server'; areas = 'Authentication,Security,Filter,StaticFile,CGI,Compression,Cache,RequestNotifications,Module,FastCGI,WebSocket'; verbosity = 'Verbose'}
 
-    if ($PSBoundParameters.ContainsKey("FailureTimeTaken")) {
-        Write-Verbose "Setting timeTaken to $FailureTimeTaken"
+    if ($PSBoundParameters.ContainsKey("FailureTimeTakenSeconds")) {
+        Write-Verbose "Setting timeTaken to $FailureTimeTakenSeconds"
         Set-WebConfigurationProperty -pspath $pspath `
             -filter "system.webServer/tracing/traceFailedRequests/add[@path='$Path']/failureDefinitions" `
             -name "timeTaken" -value (New-TimeSpan -Seconds $FailureTimeTakenSeconds).ToString()
